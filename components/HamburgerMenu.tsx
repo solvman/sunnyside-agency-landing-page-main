@@ -1,0 +1,182 @@
+"use client";
+import useClickOutside from "@/hooks/useClickOutside";
+import useEscapeKey from "@/hooks/useEscapeKey";
+import { AnimatePresence, delay, motion, MotionConfig } from "framer-motion";
+import { useRef, useState } from "react";
+import { RemoveScroll } from "react-remove-scroll";
+import FocusLock from "react-focus-lock";
+
+type MenuPropsType = {
+  handleCloseMenu: () => void;
+};
+
+function Menu({ handleCloseMenu }: MenuPropsType) {
+  const openMenuRef = useRef(null);
+  useEscapeKey(handleCloseMenu);
+  useClickOutside(openMenuRef, handleCloseMenu);
+
+  return (
+    <FocusLock>
+      <RemoveScroll>
+        <div
+          className="absolute px-6 right-0 w-full"
+          style={{
+            top: "calc(100% + 1rem)",
+          }}
+        >
+          <motion.div
+            className="w-0 h-0 ml-auto"
+            style={{
+              borderTop: "0px solid transparent",
+              borderLeft: "0px solid transparent",
+              borderRight: "0px solid white",
+              borderBottom: "0px solid white",
+            }}
+            animate={{
+              borderTop: "10px solid transparent",
+              borderLeft: "10px solid transparent",
+              borderRight: "10px solid white",
+              borderBottom: "10px solid white",
+            }}
+            exit={{
+              borderTop: "0px solid transparent",
+              borderLeft: "0px solid transparent",
+              borderRight: "0px solid white",
+              borderBottom: "0px solid white",
+              transition: { delay: 0.3 },
+            }}
+          />
+          <motion.div
+            ref={openMenuRef}
+            className=" bg-white shadow-2xl"
+            style={{
+              height: "0",
+            }}
+            animate={{
+              height: "auto",
+            }}
+            exit={{
+              height: "0",
+              transition: {
+                delay: 0.2,
+              },
+            }}
+            transition={{
+              type: "spring",
+              delay: 0.25,
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: -30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.375, type: "spring" }}
+              exit={{ opacity: 0, transition: { delay: 0, duration: 0.1 } }}
+            >
+              <ul className="flex flex-col gap-6 py-6 items-center">
+                <motion.li>
+                  <a href="" className="text-2xl font-bold text-gray-900">
+                    About
+                  </a>
+                </motion.li>
+                <motion.li>
+                  <a href="" className="text-2xl font-bold text-gray-900">
+                    Services
+                  </a>
+                </motion.li>
+                <motion.li>
+                  <a href="" className="text-2xl font-bold text-gray-900">
+                    Project
+                  </a>
+                </motion.li>
+                <motion.li>
+                  <a href="" className="text-2xl font-bold text-gray-900">
+                    Contact
+                  </a>
+                </motion.li>
+              </ul>
+            </motion.div>
+          </motion.div>
+        </div>
+      </RemoveScroll>
+    </FocusLock>
+  );
+}
+
+function HamburgerMenu() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <MotionConfig transition={{ duration: 0.5, ease: "easeInOut" }}>
+      <motion.div
+        className="sm:hidden flex flex-row items-center"
+        initial={false}
+        animate={open ? "open" : "closed"}
+      >
+        <motion.button
+          className="w-6 h-6 relative"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <motion.span
+            className="absolute bg-white h-[2px] w-6 shadow-sm"
+            style={{
+              top: "10%",
+              left: "50%",
+              x: "-50%",
+              y: "-50%",
+            }}
+            variants={{
+              open: {
+                rotate: ["0deg", "0deg", "45deg"],
+                top: ["10%", "50%", "50%"],
+              },
+              closed: {
+                rotate: ["45deg", "0deg", "0deg"],
+                top: ["50%", "50%", "10%"],
+              },
+            }}
+          />
+          <motion.span
+            className="absolute bg-white h-[2px] w-6 shadow-sm"
+            style={{
+              top: "50%",
+              left: "50%",
+              x: "-50%",
+              y: "-50%",
+            }}
+            variants={{
+              open: {
+                rotate: ["0deg", "0deg", "45deg"],
+              },
+              closed: {
+                rotate: ["45deg", "0deg", "0deg"],
+              },
+            }}
+          />
+          <motion.span
+            className="absolute bg-white h-[2px] w-6 shadow-sm"
+            style={{
+              bottom: "10%",
+              left: "50%",
+              x: "-50%",
+              y: "50%",
+            }}
+            variants={{
+              open: {
+                rotate: ["0deg", "0deg", "-45deg"],
+                bottom: ["10%", "50%", "50%"],
+              },
+              closed: {
+                rotate: ["-45deg", "0deg", "0deg"],
+                bottom: ["50%", "50%", "10%"],
+              },
+            }}
+          />
+        </motion.button>
+        <AnimatePresence>
+          {open && <Menu handleCloseMenu={() => setOpen(false)} />}
+        </AnimatePresence>
+      </motion.div>
+    </MotionConfig>
+  );
+}
+export default HamburgerMenu;

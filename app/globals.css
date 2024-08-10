@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :focus-visible {
+    @apply outline-dashed outline-2 outline-white outline-offset-8;
+  }
+}
