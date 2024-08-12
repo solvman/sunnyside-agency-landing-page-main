@@ -6,6 +6,7 @@ import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 
 import useClickOutside from "@/hooks/useClickOutside";
 import useEscapeKey from "@/hooks/useEscapeKey";
+import VisuallyHidden from "./VisuallyHidden";
 
 type MenuPropsType = {
   handleCloseMenu: () => void;
@@ -108,7 +109,9 @@ function HamburgerMenu() {
     <MotionConfig transition={{ duration: 0.5, ease: "easeInOut" }}>
       <div className="sm:hidden ml-auto">
         <FocusLock>
-          <motion.div
+          <motion.nav
+            aria-label="Main menu"
+            role="navigation"
             className="flex flex-row items-center"
             initial={false}
             animate={open ? "open" : "closed"}
@@ -116,7 +119,13 @@ function HamburgerMenu() {
             <motion.button
               className="w-6 h-6 relative"
               onClick={() => setOpen((prev) => !prev)}
+              aria-expanded={open}
             >
+              {open ? (
+                <VisuallyHidden>Close main menu</VisuallyHidden>
+              ) : (
+                <VisuallyHidden>Open main menu</VisuallyHidden>
+              )}
               <motion.span
                 className="absolute bg-white h-[2px] w-6 shadow-sm"
                 style={{
@@ -176,7 +185,7 @@ function HamburgerMenu() {
             <AnimatePresence>
               {open && <Menu handleCloseMenu={() => setOpen(false)} />}
             </AnimatePresence>
-          </motion.div>
+          </motion.nav>
         </FocusLock>
       </div>
     </MotionConfig>
