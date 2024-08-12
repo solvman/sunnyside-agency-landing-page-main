@@ -105,13 +105,14 @@ function HamburgerMenu() {
   const [open, setOpen] = useState(false);
 
   return (
-    <FocusLock>
-      <MotionConfig transition={{ duration: 0.5, ease: "easeInOut" }}>
-        <motion.div
-          className="sm:hidden flex flex-row items-center"
-          initial={false}
-          animate={open ? "open" : "closed"}
-        >
+    <MotionConfig transition={{ duration: 0.5, ease: "easeInOut" }}>
+      <motion.div
+        className="sm:hidden flex flex-row items-center"
+        initial={false}
+        animate={open ? "open" : "closed"}
+      >
+        {" "}
+        <FocusLock>
           <motion.button
             className="w-6 h-6 relative"
             onClick={() => setOpen((prev) => !prev)}
@@ -175,9 +176,9 @@ function HamburgerMenu() {
           <AnimatePresence>
             {open && <Menu handleCloseMenu={() => setOpen(false)} />}
           </AnimatePresence>
-        </motion.div>
-      </MotionConfig>
-    </FocusLock>
+        </FocusLock>
+      </motion.div>
+    </MotionConfig>
   );
 }
 export default HamburgerMenu;

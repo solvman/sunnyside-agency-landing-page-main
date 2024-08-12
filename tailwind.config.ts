@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        "font-body": "var(--font-barlow)",
-        "font-heading": "var(--font-fraunces)",
+        body: "var(--font-barlow)",
+        heading: "var(--font-fraunces)",
       },
       colors: {
         primary: {

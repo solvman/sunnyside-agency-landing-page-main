@@ -10,25 +10,33 @@ export default function Home() {
     <>
       <header className="">
         <div className="relative h-[clamp(33.63rem,10.45rem+98.87vw,50rem)]">
-          <div className="absolute flex flex-row justify-between items-center w-full px-6 md:px-10 pt-8 md:pt-9">
+          <div className="absolute flex flex-row items-center w-full px-6 md:px-10 pt-8 md:pt-9">
             <Image
               src={imageLogo}
               alt="logo"
               className="h-[clamp(1.5rem,0.70rem+3.40vw,2.06rem)] w-auto"
             />
-            <nav className="hidden sm:block">
+            <nav className="hidden sm:block ml-auto">
               <ul className="flex flex-row gap-9">
                 <li>
-                  <a href="">About</a>
+                  <a className="btn" href="">
+                    About
+                  </a>
                 </li>
                 <li>
-                  <a href="">Services</a>
+                  <a className="btn" href="">
+                    Services
+                  </a>
                 </li>
                 <li>
-                  <a href="">Project</a>
+                  <a className="btn" href="">
+                    Project
+                  </a>
                 </li>
                 <li>
-                  <a href="">Contact</a>
+                  <a className="btn" href="">
+                    Contact
+                  </a>
                 </li>
               </ul>
             </nav>
