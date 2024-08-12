@@ -106,78 +106,79 @@ function HamburgerMenu() {
 
   return (
     <MotionConfig transition={{ duration: 0.5, ease: "easeInOut" }}>
-      <motion.div
-        className="sm:hidden flex flex-row items-center"
-        initial={false}
-        animate={open ? "open" : "closed"}
-      >
-        {" "}
+      <div className="sm:hidden ml-auto">
         <FocusLock>
-          <motion.button
-            className="w-6 h-6 relative"
-            onClick={() => setOpen((prev) => !prev)}
+          <motion.div
+            className="flex flex-row items-center"
+            initial={false}
+            animate={open ? "open" : "closed"}
           >
-            <motion.span
-              className="absolute bg-white h-[2px] w-6 shadow-sm"
-              style={{
-                top: "10%",
-                left: "50%",
-                x: "-50%",
-                y: "-50%",
-              }}
-              variants={{
-                open: {
-                  rotate: ["0deg", "0deg", "45deg"],
-                  top: ["10%", "50%", "50%"],
-                },
-                closed: {
-                  rotate: ["45deg", "0deg", "0deg"],
-                  top: ["50%", "50%", "10%"],
-                },
-              }}
-            />
-            <motion.span
-              className="absolute bg-white h-[2px] w-6 shadow-sm"
-              style={{
-                top: "50%",
-                left: "50%",
-                x: "-50%",
-                y: "-50%",
-              }}
-              variants={{
-                open: {
-                  rotate: ["0deg", "0deg", "45deg"],
-                },
-                closed: {
-                  rotate: ["45deg", "0deg", "0deg"],
-                },
-              }}
-            />
-            <motion.span
-              className="absolute bg-white h-[2px] w-6 shadow-sm"
-              style={{
-                bottom: "10%",
-                left: "50%",
-                x: "-50%",
-                y: "50%",
-              }}
-              variants={{
-                open: {
-                  rotate: ["0deg", "0deg", "-45deg"],
-                  bottom: ["10%", "50%", "50%"],
-                },
-                closed: {
-                  rotate: ["-45deg", "0deg", "0deg"],
-                  bottom: ["50%", "50%", "10%"],
-                },
-              }}
-            />
-          </motion.button>
-          <AnimatePresence>
-            {open && <Menu handleCloseMenu={() => setOpen(false)} />}
-          </AnimatePresence>
+            <motion.button
+              className="w-6 h-6 relative"
+              onClick={() => setOpen((prev) => !prev)}
+            >
+              <motion.span
+                className="absolute bg-white h-[2px] w-6 shadow-sm"
+                style={{
+                  top: "10%",
+                  left: "50%",
+                  x: "-50%",
+                  y: "-50%",
+                }}
+                variants={{
+                  open: {
+                    rotate: ["0deg", "0deg", "45deg"],
+                    top: ["10%", "50%", "50%"],
+                  },
+                  closed: {
+                    rotate: ["45deg", "0deg", "0deg"],
+                    top: ["50%", "50%", "10%"],
+                  },
+                }}
+              />
+              <motion.span
+                className="absolute bg-white h-[2px] w-6 shadow-sm"
+                style={{
+                  top: "50%",
+                  left: "50%",
+                  x: "-50%",
+                  y: "-50%",
+                }}
+                variants={{
+                  open: {
+                    rotate: ["0deg", "0deg", "45deg"],
+                  },
+                  closed: {
+                    rotate: ["45deg", "0deg", "0deg"],
+                  },
+                }}
+              />
+              <motion.span
+                className="absolute bg-white h-[2px] w-6 shadow-sm"
+                style={{
+                  bottom: "10%",
+                  left: "50%",
+                  x: "-50%",
+                  y: "50%",
+                }}
+                variants={{
+                  open: {
+                    rotate: ["0deg", "0deg", "-45deg"],
+                    bottom: ["10%", "50%", "50%"],
+                  },
+                  closed: {
+                    rotate: ["-45deg", "0deg", "0deg"],
+                    bottom: ["50%", "50%", "10%"],
+                  },
+                }}
+              />
+            </motion.button>
+            <AnimatePresence>
+              {open && <Menu handleCloseMenu={() => setOpen(false)} />}
+            </AnimatePresence>
+          </motion.div>
         </FocusLock>
-      </motion.div>
+      </div>
     </MotionConfig>
   );
 }

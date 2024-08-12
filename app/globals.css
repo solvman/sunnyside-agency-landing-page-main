@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  h1 {
+    font-size: clamp(2.5rem, 1.0849rem + 6.0377vw, 3.5rem);
+    letter-spacing: clamp(0.390625rem, 0.1695rem + 0.9434vw, 0.546875rem);
+    @apply text-white font-heading font-black uppercase leading-normal;
+  }
+
   :focus-visible {
     @apply outline-dashed outline-2 outline-white outline-offset-8;
   }
