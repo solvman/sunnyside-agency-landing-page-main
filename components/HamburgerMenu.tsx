@@ -72,28 +72,28 @@ function Menu({ handleCloseMenu }: MenuPropsType) {
               transition={{ delay: 0.375, type: "spring" }}
               exit={{ opacity: 0, transition: { delay: 0, duration: 0.1 } }}
             >
-              <ul className="flex flex-col gap-6 py-6 items-center">
+              <motion.ul className="flex flex-col gap-6 py-6 items-center">
                 <motion.li>
-                  <a href="" className="text-2xl font-bold text-gray-900">
+                  <a href="" className="btn-mobile">
                     About
                   </a>
                 </motion.li>
                 <motion.li>
-                  <a href="" className="text-2xl font-bold text-gray-900">
+                  <a href="" className="btn-mobile">
                     Services
                   </a>
                 </motion.li>
                 <motion.li>
-                  <a href="" className="text-2xl font-bold text-gray-900">
+                  <a href="" className="btn-mobile">
                     Project
                   </a>
                 </motion.li>
                 <motion.li>
-                  <a href="" className="text-2xl font-bold text-gray-900">
+                  <a href="" className="btn-mobile">
                     Contact
                   </a>
                 </motion.li>
-              </ul>
+              </motion.ul>
             </motion.div>
           </motion.div>
         </div>
