@@ -49,7 +49,7 @@ function Menu({ handleCloseMenu }: MenuPropsType) {
         />
         <motion.div
           ref={openMenuRef}
-          className=" bg-white shadow-2xl"
+          className=" bg-white shadow-2xl overflow-hidden"
           style={{
             height: "0",
           }}
@@ -73,28 +73,28 @@ function Menu({ handleCloseMenu }: MenuPropsType) {
             transition={{ delay: 0.375, type: "spring" }}
             exit={{ opacity: 0, transition: { delay: 0, duration: 0.1 } }}
           >
-            <motion.ul className="flex flex-col gap-6 py-6 items-center">
-              <motion.li>
-                <motion.a href="" className="btn-mobile">
+            <ul className="flex flex-col gap-6 py-6 items-center">
+              <li>
+                <a href="" className="btn-mobile">
                   About
-                </motion.a>
-              </motion.li>
-              <motion.li>
-                <motion.a href="" className="btn-mobile">
+                </a>
+              </li>
+              <li>
+                <a href="" className="btn-mobile">
                   Services
-                </motion.a>
-              </motion.li>
-              <motion.li>
-                <motion.a href="" className="btn-mobile">
+                </a>
+              </li>
+              <li>
+                <a href="" className="btn-mobile">
                   Project
-                </motion.a>
-              </motion.li>
-              <motion.li>
-                <motion.a href="" className="btn-mobile">
+                </a>
+              </li>
+              <li>
+                <a href="" className="btn-mobile">
                   Contact
-                </motion.a>
-              </motion.li>
-            </motion.ul>
+                </a>
+              </li>
+            </ul>
           </motion.div>
         </motion.div>
       </div>

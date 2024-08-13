@@ -21,4 +21,10 @@
   .btn-mobile {
     @apply text-secondary-400 text-sm font-semibold -tracking-[0.143px] leading-tight rounded-full hover:bg-primary-500 hover:text-black hover:px-8 hover:py-4 transition-all duration-300 ease-in-out focus-visible:bg-primary-500 focus-visible:text-black focus-visible:uppercase focus-visible:px-8 focus-visible:py-4 focus-visible:outline-primary-700 hover:uppercase focus-visible:font-heading hover:font-heading hover:font-bold font-body;
   }
+
+  .cta {
+    font-size: clamp(2rem, 1.2925rem + 3.0189vw, 2.5rem);
+    letter-spacing: clamp(-0.0143125rem, -0.0093rem + -0.0215vw, -0.017875rem);
+    @apply font-heading text-secondary-200 font-black leading-normal;
+  }
 }
