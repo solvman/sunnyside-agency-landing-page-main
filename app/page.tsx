@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Services from "@/components/Services";
 import Transform from "@/components/Transform";
 
 export default function Home() {
@@ -7,6 +8,7 @@ export default function Home() {
       <Header />
       <main>
         <Transform />
+        <Services />
       </main>
     </>
   );
