@@ -27,6 +27,7 @@ function Services() {
         <Image
           src={imageDesignMobile}
           alt="Cherries on green background"
+          sizes="100vw"
           fill
           className="-z-10 block object-cover sm:hidden"
         />
@@ -49,6 +50,7 @@ function Services() {
         <Image
           src={imagePhotograyMobile}
           alt="Orange on blue background"
+          sizes="100vw"
           fill
           className="-z-10 block object-cover sm:hidden"
         />
