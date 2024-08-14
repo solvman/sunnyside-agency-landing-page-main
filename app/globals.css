@@ -12,6 +12,10 @@
   :focus-visible {
     @apply outline-dashed outline-2 outline-offset-8 outline-white;
   }
+
+  svg {
+    @apply inline-block;
+  }
 }
 
 @layer components {
@@ -28,7 +32,7 @@
     @apply font-heading font-black leading-normal text-secondary-200;
   }
   .footer-nav {
-    @apply text-primary-750 font-body text-lg font-semibold leading-[1.38889] -tracking-[0.129px] transition hover:text-white;
+    @apply font-body text-lg font-semibold leading-[1.38889] -tracking-[0.129px] text-primary-750 transition hover:text-white;
   }
   .footer-social {
     @apply fill-primary-750 transition hover:fill-white;
