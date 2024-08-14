@@ -32,7 +32,7 @@ function Transform() {
             </p>
             <a
               href=""
-              className="relative cursor-pointer font-heading font-black uppercase leading-[1.66667] tracking-[1px] text-secondary-200 transition-all after:absolute after:bottom-0 after:left-1/2 after:-z-10 after:block after:h-[10px] after:w-[137px] after:-translate-x-1/2 after:rounded-full after:bg-primary-500/0 after:transition-opacity after:duration-300 after:ease-in-out hover:after:bg-primary-500/25"
+              className="relative cursor-pointer font-heading font-black uppercase leading-[1.66667] tracking-[1px] text-secondary-200 transition-all after:absolute after:bottom-0 after:left-1/2 after:-z-10 after:block after:h-[10px] after:w-[137px] after:-translate-x-1/2 after:rounded-full after:bg-primary-500/0 after:transition-opacity after:duration-300 after:ease-in-out hover:after:bg-primary-500/25 focus-visible:outline-primary-700 focus-visible:after:bg-primary-500/25"
             >
               Learn more
             </a>
@@ -60,7 +60,7 @@ function Transform() {
             </p>
             <a
               href=""
-              className="relative cursor-pointer font-heading font-black uppercase leading-[1.66667] tracking-[1px] text-secondary-200 transition-all after:absolute after:bottom-0 after:left-1/2 after:-z-10 after:block after:h-[10px] after:w-[137px] after:-translate-x-1/2 after:rounded-full after:bg-primary-300/0 after:transition-all after:duration-300 after:ease-in-out hover:after:bg-primary-300/25"
+              className="relative cursor-pointer font-heading font-black uppercase leading-[1.66667] tracking-[1px] text-secondary-200 transition-all after:absolute after:bottom-0 after:left-1/2 after:-z-10 after:block after:h-[10px] after:w-[137px] after:-translate-x-1/2 after:rounded-full after:bg-primary-300/0 after:transition-all after:duration-300 after:ease-in-out hover:after:bg-primary-300/25 focus-visible:outline-primary-700 focus-visible:after:bg-primary-300/25"
             >
               Learn more
             </a>
