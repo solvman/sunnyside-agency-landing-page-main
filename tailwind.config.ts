@@ -15,9 +15,11 @@ const config: Config = {
       colors: {
         primary: {
           300: "hsl(7, 99%, 70%)", // Soft red
+          350: "hsla(168, 44%, 70%)", // Soft cyan
           500: "hsl(51, 100%, 49%)", // Yellow
           600: "hsl(168, 34%, 41%)", // Dark moderate cyan
           700: "hsl(198, 62%, 26%)", // Dark blue
+          750: "hsl(168, 45%, 32%)", // Dark cyan
           800: "hsl(167, 40%, 24%)", // Dark desaturated cyan
         },
         secondary: {

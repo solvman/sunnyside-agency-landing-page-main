@@ -14,6 +14,7 @@ function Header() {
           src={imageLogo}
           alt="logo"
           className="h-[clamp(1.5rem,0.70rem+3.40vw,2.06rem)] w-auto"
+          priority
         />
         <nav className="ml-auto hidden sm:block">
           <ul className="flex flex-row gap-9">
